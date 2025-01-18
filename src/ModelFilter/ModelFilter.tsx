@@ -1,55 +1,55 @@
-import { type ComponentProps, useState } from "react";
+import { type ComponentProps, useState } from 'react';
 
-import { CircleX } from "lucide-react";
+import { CircleX } from 'lucide-react';
 
-import { Button } from "@/lib/components/ui/button";
+import { Button } from '@/lib/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-} from "@/lib/components/ui/card";
-import { ScrollArea } from "@/lib/components/ui/scroll-area";
-import type { TableView } from "@/types";
+} from '@/lib/components/ui/card';
+import { ScrollArea } from '@/lib/components/ui/scroll-area';
+import type { TableView } from '@/types';
 import {
   FieldType,
   type FilterItem,
   ScalarType,
   type SelectOption,
-} from "@/types";
-import { humanizeText } from "@/utils";
+} from '@/types';
+import { humanizeText } from '@/utils';
 
-import { ModelFilterItem } from "./ModelFilterItem";
-import { addFilter, changeFilter, removeFilter } from "./utils";
+import { ModelFilterItem } from './ModelFilterItem';
+import { addFilter, changeFilter, removeFilter } from './utils';
 
 export const FILTER_OPERATIONS: Record<string, SelectOption[]> = {
-  [FieldType.ID]: [{ label: "equal to", value: "eq" }],
+  [FieldType.ID]: [{ label: 'equal to', value: 'eq' }],
   [FieldType.STRING]: [
-    { label: "equal to", value: "eq" },
-    { label: "like", value: "like" },
+    { label: 'equal to', value: 'eq' },
+    { label: 'like', value: 'like' },
   ],
-  [FieldType.BOOLEAN]: [{ label: "equal to", value: "eq" }], // true or false
+  [FieldType.BOOLEAN]: [{ label: 'equal to', value: 'eq' }], // true or false
   [FieldType.INT]: [
-    { label: "equal to", value: "eq" },
-    { label: "less than", value: "lt" },
-    { label: "less than or equal to", value: "le" },
-    { label: "greater than", value: "gt" },
-    { label: "greater than or equal to", value: "ge" },
+    { label: 'equal to', value: 'eq' },
+    { label: 'less than', value: 'lt' },
+    { label: 'less than or equal to', value: 'le' },
+    { label: 'greater than', value: 'gt' },
+    { label: 'greater than or equal to', value: 'ge' },
   ],
   [FieldType.FLOAT]: [
-    { label: "equal to", value: "eq" },
-    { label: "less than", value: "lt" },
-    { label: "less than or equal to", value: "le" },
-    { label: "greater than", value: "gt" },
-    { label: "greater than or equal to", value: "ge" },
+    { label: 'equal to', value: 'eq' },
+    { label: 'less than', value: 'lt' },
+    { label: 'less than or equal to', value: 'le' },
+    { label: 'greater than', value: 'gt' },
+    { label: 'greater than or equal to', value: 'ge' },
   ],
   [FieldType.DATETIME]: [
-    { label: "equal to", value: "eq" },
-    { label: "less than", value: "lt" },
-    { label: "less than or equal to", value: "le" },
-    { label: "greater than", value: "gt" },
-    { label: "greater than or equal to", value: "ge" },
+    { label: 'equal to', value: 'eq' },
+    { label: 'less than', value: 'lt' },
+    { label: 'less than or equal to', value: 'le' },
+    { label: 'greater than', value: 'gt' },
+    { label: 'greater than or equal to', value: 'ge' },
   ],
 };
 
@@ -88,8 +88,8 @@ export const ModelFilter = ({
     value: field.name,
   }));
   const notOptions = [
-    { label: "is", value: false },
-    { label: "is not", value: true },
+    { label: 'is', value: false },
+    { label: 'is not', value: true },
   ];
 
   // default filter item returns something like
@@ -106,7 +106,7 @@ export const ModelFilter = ({
           path: filterableFields[0].name,
           not: notOptions[0].value,
           op: FILTER_OPERATIONS[filterableFields[0].type][0].value as string,
-          value: "",
+          value: '',
         }
       : null;
 
@@ -235,7 +235,7 @@ export const ModelFilter = ({
             </div>
           </>
         ) : (
-          "No fields can be filtered."
+          'No fields can be filtered.'
         )}
       </CardContent>
       <CardFooter className='justify-between'>
