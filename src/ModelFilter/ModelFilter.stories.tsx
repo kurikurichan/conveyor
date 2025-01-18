@@ -87,7 +87,6 @@ const meta = {
     ],
   },
   render: (props) => {
-    //eofiejfoiej
     const [tableView, setTableView] = useState<TableView>({});
 
     return (
