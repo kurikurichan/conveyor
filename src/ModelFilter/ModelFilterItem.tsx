@@ -1,7 +1,7 @@
-import type { ChangeEvent } from 'react';
+import type { ChangeEvent } from "react";
 
-import { SelectInput, StringInput } from '@/BasicInputs';
-import type { FilterItem, SelectOption } from '@/types';
+import { SelectInput, StringInput } from "@/BasicInputs";
+import type { FilterItem, SelectOption } from "@/types";
 
 export interface ModelFilterItemProps {
   filterItem: FilterItem;
@@ -29,7 +29,7 @@ export const ModelFilterItem = ({
             path: newPath,
             not: selectOptions.not[0].value as boolean,
             op: selectOptions.op[0].value as string,
-            value: '',
+            value: "",
           };
           onFilterItemChange(newFilterItem);
         }}
