@@ -90,7 +90,7 @@ const meta = {
     const [tableView, setTableView] = useState<TableView>({});
 
     return (
-      <div className='flex h-[300px] flex-col'>
+      <div className="flex h-[300px] flex-col">
         <ModelFilter
           fields={props.fields}
           tableViewOptions={{ tableView, onTableViewChange: setTableView }}

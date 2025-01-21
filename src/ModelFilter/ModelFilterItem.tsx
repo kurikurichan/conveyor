@@ -23,7 +23,7 @@ export const ModelFilterItem = ({
       <SelectInput
         options={selectOptions.path}
         value={filterItem.path}
-        className='min-w-fit'
+        className="min-w-fit"
         onChange={(newPath: string) => {
           const newFilterItem = {
             path: newPath,
@@ -37,7 +37,7 @@ export const ModelFilterItem = ({
       <SelectInput
         options={selectOptions.not}
         value={filterItem.not}
-        className='min-w-fit'
+        className="min-w-fit"
         onChange={(newNot: boolean) => {
           const newFilterItem = {
             path: filterItem.path,
@@ -51,7 +51,7 @@ export const ModelFilterItem = ({
       <SelectInput
         options={selectOptions.op}
         value={filterItem.op}
-        className='min-w-fit'
+        className="min-w-fit"
         onChange={(newOp: string) => {
           const newFilterItem = {
             path: filterItem.path,
@@ -64,7 +64,7 @@ export const ModelFilterItem = ({
       />
       <StringInput
         value={filterItem.value}
-        className='min-w-20'
+        className="min-w-20"
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
           const newFilterItem = {
             path: filterItem.path,

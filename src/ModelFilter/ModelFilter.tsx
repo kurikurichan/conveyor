@@ -126,7 +126,7 @@ export const ModelFilter = ({
     };
   return (
     <Card {...cardProps}>
-      <CardHeader className='p-2'>
+      <CardHeader className="p-2">
         <CardDescription>
           Filters within the same group are combined to show results that meet
           all of the selected criteria.
@@ -138,15 +138,15 @@ export const ModelFilter = ({
           Create groups of filters to narrow down your results.
         </CardDescription>
       </CardHeader>
-      <CardContent className='p-0'>
+      <CardContent className="p-0">
         {defaultFilterItem ? (
           <>
-            <ScrollArea className='max-h-80'>
+            <ScrollArea className="max-h-80">
               {tempFilter?.map((filterGroup, i) => {
                 const groupKey = `filter-group-${i}`;
                 return (
-                  <Card key={groupKey} className='m-2 p-1 hover:bg-muted/50'>
-                    <CardContent className='space-y-2 p-2'>
+                  <Card key={groupKey} className="m-2 p-1 hover:bg-muted/50">
+                    <CardContent className="space-y-2 p-2">
                       {filterGroup.map((filterItem, j) => {
                         const groupItemkey = `filter-item-group-${i}-index-${j}`;
                         const fieldType = fields.find(
@@ -154,7 +154,7 @@ export const ModelFilter = ({
                         )?.type;
                         if (!fieldType) return null;
                         return (
-                          <div key={groupItemkey} className='flex gap-2'>
+                          <div key={groupItemkey} className="flex gap-2">
                             <ModelFilterItem
                               filterItem={filterItem}
                               onFilterItemChange={onFilterItemChange(i, j)}
@@ -165,8 +165,8 @@ export const ModelFilter = ({
                               }}
                             />
                             <Button
-                              variant='outline-destructive'
-                              className='px-2'
+                              variant="outline-destructive"
+                              className="px-2"
                               onClick={() => {
                                 const newFilter = removeFilter(
                                   tempFilter,
@@ -188,8 +188,8 @@ export const ModelFilter = ({
                     </CardContent>
                     <CardDescription>
                       <Button
-                        variant='ghost'
-                        size='sm'
+                        variant="ghost"
+                        size="sm"
                         onClick={() => {
                           const newFilter = addFilter(
                             tempFilter,
@@ -210,10 +210,10 @@ export const ModelFilter = ({
                 );
               })}
             </ScrollArea>
-            <div className='p-3'>
+            <div className="p-3">
               <Button
-                variant='outline'
-                className=' w-full p-3 text-muted-foreground text-sm'
+                variant="outline"
+                className=" w-full p-3 text-muted-foreground text-sm"
                 onClick={() => {
                   const fieldType = fields.find(
                     (field) => field.name === pathOptions[0].value,
@@ -238,9 +238,9 @@ export const ModelFilter = ({
           'No fields can be filtered.'
         )}
       </CardContent>
-      <CardFooter className='justify-between'>
+      <CardFooter className="justify-between">
         <Button
-          variant='outline'
+          variant="outline"
           onClick={() =>
             handleOnClear(() =>
               onTempTableViewChange((oldTableView) =>
